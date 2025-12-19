@@ -21,19 +21,18 @@ exports.about = (req, res) => {
     // Add more team members as needed
   ];
 
-  // removed because client thought this was more for an investor audience
-  // const stats = [
-  //   { value: '5M+', label: 'Students in Canada' },
-  //   { value: '300K+', label: 'GTA Students' },
-  //   { value: '72hrs', label: 'Average Matching Time' },
-  //   { value: '$7,000', label: 'Max Subsidy Available' },
-  // ];
+  const stats = [
+    { value: '5M+', label: 'Students in Canada' },
+    { value: '300K+', label: 'GTA Students' },
+    { value: '72hrs', label: 'Average Matching Time' },
+    { value: '$7,000', label: 'Max Subsidy Available' },
+  ];
 
   res.render('pages/about', {
     title: 'About Us - BridgeIn',
     description: 'Learn about BridgeIn\'s mission to connect students with meaningful co-op opportunities.',
     teamMembers,
-    // stats, <--- REMOVED THIS LINE
+    stats,
   });
 };
 
