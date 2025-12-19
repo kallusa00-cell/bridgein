@@ -189,7 +189,7 @@
   }
 
   /* Comparison Table */
-  .comparison-table {
+  /* .comparison-table {
     @apply w-full border-collapse;
   }
 
@@ -215,7 +215,7 @@
 
   .comparison-table th.highlight-col {
     @apply bg-primary-100 text-primary-700;
-  }
+  } */
 
   /* Animations */
   .animate-on-scroll {

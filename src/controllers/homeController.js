@@ -21,12 +21,13 @@ exports.about = (req, res) => {
     // Add more team members as needed
   ];
 
-  const stats = [
-    { value: '5M+', label: 'Students in Canada' },
-    { value: '300K+', label: 'GTA Students' },
-    { value: '72hrs', label: 'Average Matching Time' },
-    { value: '$7,000', label: 'Max Subsidy Available' },
-  ];
+  // removed because client thought this was more for an investor audience
+  // const stats = [
+  //   { value: '5M+', label: 'Students in Canada' },
+  //   { value: '300K+', label: 'GTA Students' },
+  //   { value: '72hrs', label: 'Average Matching Time' },
+  //   { value: '$7,000', label: 'Max Subsidy Available' },
+  // ];
 
   res.render('pages/about', {
     title: 'About Us - BridgeIn',

@@ -13,7 +13,7 @@ exports.index = (req, res) => {
     {
       icon: '👨‍🏫',
       title: 'Expert Mentorship',
-      description: 'Get guidance from industry professionals with decades of experience.',
+      description: 'Get guidance from industry professionals in expert-led group sessions.',
     },
     {
       icon: '👥',
@@ -129,7 +129,7 @@ exports.plus = (req, res) => {
     {
       icon: '🎓',
       title: 'Top-Tier Mentorship',
-      description: 'Get paired with an industry expert who will guide you through your career journey.',
+      description: 'Join small cohorts (max 12 students) led by an industry expert to work on real-world scenarios.',
     },
     {
       icon: '💼',
@@ -153,8 +153,8 @@ exports.plus = (req, res) => {
     },
     {
       icon: '💬',
-      title: '1-on-1 Career Coaching',
-      description: 'Weekly sessions with your mentor to discuss progress and strategy.',
+      title: 'Weekly Group Coaching',
+      description: 'Weekly live sessions with your cohort to discuss progress, strategy, and code reviews.',
     },
   ];
 
