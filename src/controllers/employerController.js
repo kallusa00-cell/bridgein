@@ -5,10 +5,10 @@
 
 exports.index = (req, res) => {
   const benefits = [
-    {
+{
       icon: '💰',
-      title: 'Save Up to 80%',
-      description: 'Government subsidies cover 50-70% of student wages, up to $7,000 per placement.',
+      title: 'Save Up to $10,000',
+      description: 'Combine the $7,000 federal subsidy with a $3,000 tax credit to potentially cover 100% of wages.',
       highlight: true,
     },
     {
@@ -81,7 +81,7 @@ exports.index = (req, res) => {
 
   res.render('pages/employers/index', {
     title: 'For Employers - BridgeIn',
-    description: 'Hire pre-screened co-op students and save up to 80% on wages through government subsidies.',
+    description: 'Hire pre-screened co-op students and save up to $10,000 on wages through government subsidies and tax credits.',
     benefits,
     subsidyInfo,
     processSteps,
