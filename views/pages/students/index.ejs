@@ -1,0 +1,207 @@
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-mesh py-20 md:py-28">
+  <div class="absolute top-20 right-20 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 left-20 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl"></div>
+  
+  <div class="container-custom relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="badge-primary mb-6 animate-fade-in-down">For Students</span>
+      
+      <h1 class="text-5xl md:text-6xl font-display font-bold text-dark-900 mb-6 animate-fade-in-up">
+        Launch Your Career with
+        <span class="text-gradient-primary">Expert Guidance</span>
+      </h1>
+      
+      <p class="text-xl text-dark-500 mb-10 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.1s;">
+        Get mentorship from industry experts, build an impressive portfolio, and land your dream co-op placement. We're with you every step of the way.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+        <a href="/students/plus" class="btn-primary btn-lg">
+          Join Plus Program
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+        <a href="/students/resources" class="btn-outline btn-lg">
+          Free Resources
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Grid -->
+<section class="section bg-white">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge-secondary mb-4">What You Get</span>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-900 mb-6">
+        Everything You Need to Succeed
+      </h2>
+      <p class="text-xl text-dark-500">
+        From mentorship to mock interviews, we provide comprehensive support to help you land your ideal position.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% benefits.forEach((benefit, index) => { %>
+        <div class="card-hover p-8 animate-on-scroll" style="animation-delay: <%= index * 0.1 %>s;">
+          <div class="text-4xl mb-4"><%= benefit.icon %></div>
+          <h3 class="text-xl font-bold text-dark-800 mb-3"><%= benefit.title %></h3>
+          <p class="text-dark-500"><%= benefit.description %></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Free vs Plus Comparison -->
+<section class="section bg-dark-50">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge-accent mb-4">Choose Your Path</span>
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-dark-900 mb-6">
+        Free Resources or Premium Support
+      </h2>
+      <p class="text-xl text-dark-500">
+        Start with our free resources, or accelerate your career with our Plus program.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <!-- Free Tier -->
+      <div class="card p-8 animate-on-scroll">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-dark-800 mb-2">Free Resources</h3>
+          <div class="text-4xl font-display font-bold text-dark-900 mb-2">$0</div>
+          <p class="text-dark-500">Forever free</p>
+        </div>
+        
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Resume writing guides</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Cover letter templates</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Interview prep videos</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Career tips blog</span>
+          </li>
+          <li class="flex items-center text-dark-300">
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+            <span>1-on-1 mentorship</span>
+          </li>
+          <li class="flex items-center text-dark-300">
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+            <span>Priority job matching</span>
+          </li>
+        </ul>
+        
+        <a href="/students/resources" class="btn-outline w-full">
+          Browse Resources
+        </a>
+      </div>
+      
+      <!-- Plus Tier -->
+      <div class="pricing-card-featured p-8 animate-on-scroll" style="animation-delay: 0.1s;">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-dark-800 mb-2">Plus Program</h3>
+          <div class="text-4xl font-display font-bold text-primary-600 mb-2">$20<span class="text-lg text-dark-400">/month</span></div>
+          <p class="text-dark-500">Cancel anytime</p>
+        </div>
+        
+        <ul class="space-y-4 mb-8">
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Everything in Free</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600 font-semibold">1-on-1 expert mentorship</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600 font-semibold">Portfolio project guidance</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Resume & LinkedIn review</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Live mock interviews</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600 font-semibold">Priority job matching</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-secondary-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-dark-600">Private community access</span>
+          </li>
+        </ul>
+        
+        <a href="/students/plus" class="btn-primary w-full">
+          Get Started Now
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section bg-gradient-dark text-white">
+  <div class="container-custom text-center">
+    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-on-scroll">
+      Start Your Journey Today
+    </h2>
+    <p class="text-xl text-dark-300 mb-10 max-w-2xl mx-auto animate-on-scroll" style="animation-delay: 0.1s;">
+      Whether you choose our free resources or join the Plus program, you're taking the first step toward your dream career.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll" style="animation-delay: 0.2s;">
+      <a href="/students/plus" class="btn-primary btn-lg">
+        Join Plus Program
+      </a>
+      <a href="/students/resources" class="btn-outline-white btn-lg">
+        Browse Free Resources
+      </a>
+    </div>
+  </div>
+</section>

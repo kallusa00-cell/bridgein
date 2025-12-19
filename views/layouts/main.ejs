@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'BridgeIn - Connecting Students with Career Opportunities' %>">
+  <meta name="keywords" content="co-op, internship, student jobs, career, mentorship, work placement, Canada">
+  <meta name="author" content="BridgeIn">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'BridgeIn' %>">
+  <meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'Connecting Students with Career Opportunities' %>">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= siteUrl %><%= currentPath %>">
+  <meta property="og:image" content="<%= siteUrl %>/images/og-image.jpg">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'BridgeIn' %>">
+  <meta name="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'Connecting Students with Career Opportunities' %>">
+  
+  <title><%= typeof title !== 'undefined' ? title : 'BridgeIn' %></title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="bg-white text-dark-800 min-h-screen flex flex-col">
+  <%- include('../partials/header') %>
+  
+  <main class="flex-grow">
+    <%- body %>
+  </main>
+  
+  <%- include('../partials/footer') %>
+  
+  <script src="/js/main.js"></script>
+</body>
+</html>

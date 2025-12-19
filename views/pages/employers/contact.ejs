@@ -1,0 +1,236 @@
+<section class="section bg-gradient-mesh min-h-screen">
+  <div class="container-custom">
+    <div class="max-w-6xl mx-auto">
+      <% if(formSubmitted) { %>
+        <!-- Success Message -->
+        <div class="max-w-2xl mx-auto text-center py-20">
+          <div class="w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg class="w-12 h-12 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h1 class="text-4xl font-display font-bold text-dark-900 mb-4">Thank You, <%= formData.contactName %>!</h1>
+          <p class="text-xl text-dark-500 mb-8">
+            We've received your inquiry for <strong><%= formData.companyName %></strong>. Our team will reach out within 24 hours.
+          </p>
+          <a href="/" class="btn-primary">
+            Return to Home
+          </a>
+        </div>
+      <% } else { %>
+        <div class="grid lg:grid-cols-5 gap-12">
+          <!-- Contact Form -->
+          <div class="lg:col-span-3">
+            <div class="card p-8 md:p-10">
+              <h1 class="text-3xl font-display font-bold text-dark-900 mb-2">Let's Talk About Your Hiring Needs</h1>
+              <p class="text-dark-500 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+              
+              <% if(errors && errors.length > 0) { %>
+                <div class="p-4 bg-red-50 border border-red-200 rounded-xl mb-6">
+                  <h4 class="font-semibold text-red-800 mb-2">Please fix the following errors:</h4>
+                  <ul class="list-disc list-inside text-red-700 text-sm">
+                    <% errors.forEach(error => { %>
+                      <li><%= error %></li>
+                    <% }); %>
+                  </ul>
+                </div>
+              <% } %>
+              
+              <form action="/employers/contact" method="POST" class="space-y-6">
+                <!-- Company Info -->
+                <div>
+                  <h3 class="font-semibold text-dark-800 mb-4 flex items-center gap-2">
+                    <span class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">1</span>
+                    Company Information
+                  </h3>
+                  
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                      <label for="companyName" class="label">Company Name *</label>
+                      <input type="text" id="companyName" name="companyName" class="input" required 
+                        value="<%= typeof formData !== 'undefined' ? formData.companyName || '' : '' %>">
+                    </div>
+                    
+                    <div>
+                      <label for="companySize" class="label">Company Size *</label>
+                      <select id="companySize" name="companySize" class="input" required>
+                        <option value="">Select size...</option>
+                        <option value="1-10" <%= typeof formData !== 'undefined' && formData.companySize === '1-10' ? 'selected' : '' %>>1-10 employees</option>
+                        <option value="11-50" <%= typeof formData !== 'undefined' && formData.companySize === '11-50' ? 'selected' : '' %>>11-50 employees</option>
+                        <option value="51-200" <%= typeof formData !== 'undefined' && formData.companySize === '51-200' ? 'selected' : '' %>>51-200 employees</option>
+                        <option value="201-500" <%= typeof formData !== 'undefined' && formData.companySize === '201-500' ? 'selected' : '' %>>201-500 employees</option>
+                        <option value="500+" <%= typeof formData !== 'undefined' && formData.companySize === '500+' ? 'selected' : '' %>>500+ employees</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label for="industry" class="label">Industry *</label>
+                      <select id="industry" name="industry" class="input" required>
+                        <option value="">Select industry...</option>
+                        <option value="technology">Technology</option>
+                        <option value="finance">Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="retail">Retail</option>
+                        <option value="professional-services">Professional Services</option>
+                        <option value="non-profit">Non-Profit</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="pt-6 border-t border-dark-100">
+                  <h3 class="font-semibold text-dark-800 mb-4 flex items-center gap-2">
+                    <span class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">2</span>
+                    Contact Information
+                  </h3>
+                  
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                      <label for="contactName" class="label">Your Name *</label>
+                      <input type="text" id="contactName" name="contactName" class="input" required
+                        value="<%= typeof formData !== 'undefined' ? formData.contactName || '' : '' %>">
+                    </div>
+                    
+                    <div>
+                      <label for="email" class="label">Email Address *</label>
+                      <input type="email" id="email" name="email" class="input" required
+                        value="<%= typeof formData !== 'undefined' ? formData.email || '' : '' %>">
+                    </div>
+                    
+                    <div>
+                      <label for="phone" class="label">Phone Number</label>
+                      <input type="tel" id="phone" name="phone" class="input"
+                        value="<%= typeof formData !== 'undefined' ? formData.phone || '' : '' %>">
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Hiring Details -->
+                <div class="pt-6 border-t border-dark-100">
+                  <h3 class="font-semibold text-dark-800 mb-4 flex items-center gap-2">
+                    <span class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600">3</span>
+                    Hiring Details
+                  </h3>
+                  
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="positions" class="label">Number of Positions</label>
+                      <input type="number" id="positions" name="positions" class="input" min="1" value="1">
+                    </div>
+                    
+                    <div>
+                      <label for="timeline" class="label">When do you need to hire?</label>
+                      <select id="timeline" name="timeline" class="input">
+                        <option value="asap">As soon as possible</option>
+                        <option value="1-month">Within 1 month</option>
+                        <option value="2-3-months">2-3 months</option>
+                        <option value="next-term">Next academic term</option>
+                        <option value="exploring">Just exploring</option>
+                      </select>
+                    </div>
+                    
+                    <div class="sm:col-span-2">
+                      <label for="message" class="label">Tell us about the role(s)</label>
+                      <textarea id="message" name="message" rows="4" class="input" placeholder="What skills are you looking for? What projects will the student work on?"><%= typeof formData !== 'undefined' ? formData.message || '' : '' %></textarea>
+                    </div>
+                    
+                    <div class="sm:col-span-2">
+                      <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" name="diversityHiring" class="mt-1 w-4 h-4 rounded border-dark-300 text-secondary-600 focus:ring-secondary-500"
+                          <%= typeof formData !== 'undefined' && formData.diversityHiring ? 'checked' : '' %>>
+                        <span class="text-dark-600">
+                          <strong class="text-dark-800">Interested in diversity hiring?</strong><br>
+                          <span class="text-sm">Get 70% subsidy (up to $7,000) by hiring from underrepresented groups.</span>
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="pt-6">
+                  <button type="submit" class="btn-secondary btn-lg w-full sm:w-auto">
+                    Submit Inquiry
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Sidebar -->
+          <div class="lg:col-span-2 space-y-6">
+            <!-- Quick Info -->
+            <div class="card p-6">
+              <h3 class="font-bold text-dark-800 mb-4">Why Contact BridgeIn?</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-secondary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-dark-600">Pre-screened candidates in 72 hours</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-secondary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-dark-600">Save up to $7,000 per placement</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-secondary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-dark-600">We handle grant applications</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-secondary-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-dark-600">Support with college agreements</span>
+                </li>
+              </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="card p-6 bg-dark-900 text-white">
+              <h3 class="font-bold mb-4">Prefer to talk?</h3>
+              <div class="space-y-4">
+                <a href="mailto:contact@bridgein.ca" class="flex items-center gap-3 text-dark-300 hover:text-white transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  contact@bridgein.ca
+                </a>
+                <a href="https://bridgein.ca" class="flex items-center gap-3 text-dark-300 hover:text-white transition-colors">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                  </svg>
+                  www.bridgein.ca
+                </a>
+              </div>
+            </div>
+            
+            <!-- Funding Notice -->
+            <div class="card p-6 bg-primary-50 border-2 border-primary-200">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-primary-800 mb-1">Winter 2026 Applications Open</h4>
+                  <p class="text-primary-700 text-sm">Funding is limited and administered on a first-come, first-served basis. Submit your inquiry today!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</section>

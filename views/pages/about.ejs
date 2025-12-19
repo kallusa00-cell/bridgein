@@ -1,0 +1,142 @@
+<!-- Hero Section -->
+<section class="bg-gradient-mesh py-20 md:py-28">
+  <div class="container-custom">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="badge-primary mb-6">About Us</span>
+      <h1 class="text-5xl md:text-6xl font-display font-bold text-dark-900 mb-6">
+        Building Bridges to <span class="text-gradient-primary">Better Futures</span>
+      </h1>
+      <p class="text-xl text-dark-500 max-w-2xl mx-auto">
+        BridgeIn was founded with a simple mission: help post-secondary students find quality co-op placements that match their career paths.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section-sm bg-dark-900 text-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <% stats.forEach((stat, index) => { %>
+        <div class="animate-on-scroll" style="animation-delay: <%= index * 0.1 %>s;">
+          <div class="text-4xl md:text-5xl font-display font-bold text-primary-400 mb-2"><%= stat.value %></div>
+          <div class="text-dark-300"><%= stat.label %></div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="section bg-white">
+  <div class="container-custom">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="animate-on-scroll">
+        <span class="badge-secondary mb-4">Our Story</span>
+        <h2 class="text-4xl font-display font-bold text-dark-900 mb-6">
+          From Problem to Solution
+        </h2>
+        <div class="space-y-4 text-dark-600">
+          <p>
+            The Canadian post-secondary landscape is vast—with over 5 million students across the country. Yet, many struggle to find quality co-op placements that genuinely align with their career aspirations.
+          </p>
+          <p>
+            Meanwhile, employers miss out on fresh talent due to complex hiring processes, unaware of the government subsidies available to offset their costs by up to 80%.
+          </p>
+          <p>
+            <strong class="text-dark-800">BridgeIn was born to solve both problems.</strong> By combining expert mentorship for students with streamlined hiring for employers, we create meaningful connections that benefit everyone.
+          </p>
+        </div>
+      </div>
+      
+      <div class="animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-8 md:p-10">
+          <h3 class="text-2xl font-bold text-dark-800 mb-6">Our Vision</h3>
+          <p class="text-dark-600 text-lg mb-6">
+            To help every student build a successful future by matching them with career-relevant co-op opportunities.
+          </p>
+          
+          <h3 class="text-2xl font-bold text-dark-800 mb-6">Our Approach</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="font-bold text-sm">1</span>
+              </div>
+              <span class="text-dark-600">Build a strong community guided by expert mentors</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="font-bold text-sm">2</span>
+              </div>
+              <span class="text-dark-600">Develop pre-screened, project-verified candidates</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-primary-500 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="font-bold text-sm">3</span>
+              </div>
+              <span class="text-dark-600">Connect employers with qualified talent in 72 hours</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Target Market -->
+<section class="section bg-dark-50">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+      <span class="badge-primary mb-4">Market Opportunity</span>
+      <h2 class="text-4xl font-display font-bold text-dark-900 mb-6">
+        A Growing Market, Untapped Potential
+      </h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="card p-8 text-center animate-on-scroll">
+        <div class="text-5xl font-display font-bold text-primary-600 mb-2">~5M</div>
+        <div class="text-dark-500 mb-4">TAM: Students/year in Canada</div>
+        <div class="h-2 bg-primary-100 rounded-full overflow-hidden">
+          <div class="h-full bg-primary-600 rounded-full" style="width: 100%"></div>
+        </div>
+      </div>
+      
+      <div class="card p-8 text-center animate-on-scroll" style="animation-delay: 0.1s;">
+        <div class="text-5xl font-display font-bold text-secondary-600 mb-2">1M</div>
+        <div class="text-dark-500 mb-4">SAM: Ontario students/year</div>
+        <div class="h-2 bg-secondary-100 rounded-full overflow-hidden">
+          <div class="h-full bg-secondary-600 rounded-full" style="width: 60%"></div>
+        </div>
+      </div>
+      
+      <div class="card p-8 text-center animate-on-scroll" style="animation-delay: 0.2s;">
+        <div class="text-5xl font-display font-bold text-accent-600 mb-2">30K</div>
+        <div class="text-dark-500 mb-4">SOM: Initial target (colleges)</div>
+        <div class="h-2 bg-accent-100 rounded-full overflow-hidden">
+          <div class="h-full bg-accent-600 rounded-full" style="width: 20%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-gradient-primary text-white">
+  <div class="container-custom text-center">
+    <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+      Join the BridgeIn Community
+    </h2>
+    <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+      Whether you're a student seeking opportunities or an employer looking for talent, we're here to help.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/students" class="btn bg-white text-primary-600 hover:bg-white/90 shadow-xl">
+        I'm a Student
+      </a>
+      <a href="/employers" class="btn-outline-white">
+        I'm an Employer
+      </a>
+    </div>
+  </div>
+</section>
