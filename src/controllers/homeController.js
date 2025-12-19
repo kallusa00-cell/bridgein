@@ -33,7 +33,7 @@ exports.about = (req, res) => {
     title: 'About Us - BridgeIn',
     description: 'Learn about BridgeIn\'s mission to connect students with meaningful co-op opportunities.',
     teamMembers,
-    stats,
+    // stats, <--- REMOVED THIS LINE
   });
 };
 
