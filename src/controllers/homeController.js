@@ -6,7 +6,7 @@
 exports.index = (req, res) => {
   res.render('pages/home', {
     title: 'BridgeIn - Connecting Students with Career Opportunities',
-    description: 'BridgeIn helps post-secondary students find quality co-op placements while saving employers up to 80% on hiring costs through government subsidies.',
+    description: 'BridgeIn helps post-secondary students find quality co-op placements while saving employers up to $10,000 on hiring costs through government subsidies.',
   });
 };
 
